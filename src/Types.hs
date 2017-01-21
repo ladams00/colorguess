@@ -7,7 +7,7 @@ module Types
   , GuessPrompt (..)
   ) where
 
-data Action = Guess Color | Hint | NOOP | End deriving (Read,Show)
+data Action = ColorIs Color | Hint | NOOP | End deriving (Read,Show)
 
 data Result = Colder | Correct | Warmer deriving (Enum,Show)
 
@@ -22,7 +22,7 @@ data Color
      deriving (Enum, Eq, Ord,Read, Show)
 
 data GuessPrompt a where
-  Say      :: String -> GuessPrompt ()
-  Query    :: String -> GuessPrompt Action
-  Response :: Color -> GuessPrompt Result
-  Quit     :: GuessPrompt ()
+  Say   :: String -> GuessPrompt ()
+  Query :: String -> GuessPrompt Action
+  Guess :: Color -> GuessPrompt Result
+  Quit  :: GuessPrompt ()
