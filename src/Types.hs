@@ -19,6 +19,7 @@ data Color
   | Yellow 
   | Green 
   | Blue 
+  | Violet
      deriving (Enum, Eq, Ord,Read, Show)
 
 data GuessPrompt a where
