@@ -18,6 +18,7 @@ library
   ghc-options:         -Wall
   exposed-modules:     Utilities
                      , ColorGuess
+                     , Interpreter
                      , Types
   build-depends:       base >= 4.7 && < 5
                      , MonadPrompt
@@ -34,10 +35,8 @@ executable colorguess-exe
   main-is:             Main.hs
   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
---                     , MonadPrompt
                      , mtl
                      , random
---                     , random-shuffle
                      , colorguess
   default-language:    Haskell2010
 
