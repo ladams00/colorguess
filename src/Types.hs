@@ -18,8 +18,9 @@ data Color
   | Orange 
   | Yellow 
   | Green 
-  | Blue 
-     deriving (Enum, Eq, Ord,Read, Show)
+  | Blue
+  | Ultra 
+     deriving (Bounded,Enum, Eq, Ord,Read, Show)
 
 data GuessPrompt a where
   Say   :: String -> GuessPrompt ()
