@@ -25,7 +25,7 @@ queryPrompt :: Prompt GuessPrompt Action
 queryPrompt = prompt (Say commands) >> prompt (Query guess')
   where
     guess'    = "Make a guess. Colors are " <> (concatMap show colors)
-    commands = "Commands are <Guess color> <Hint> <End>"
+    commands = "Commands are <ColorIs color> <Hint> <End>"
 
 guess :: Color -> Prompt GuessPrompt ()
 guess color = prompt (Guess color) >>= fromResult
