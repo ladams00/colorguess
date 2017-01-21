@@ -1,5 +1,5 @@
 {-# LANGUAGE GADTs #-}
-module Types 
+module Types
   ( Action (..)
   , Result (..)
   , Secret (..)
@@ -13,14 +13,17 @@ data Result = Colder | Correct | Warmer deriving (Enum,Show)
 
 newtype Secret a = Secret { fromSecret :: a }
 
-data Color 
-  = Red 
-  | Orange 
-  | Yellow 
-  | Green 
-  | Blue 
+data Color
+  = Red
+  | Orange
+  | Yellow
+  | Green
+  | Blue
+  | Indigo
   | Violet
-     deriving (Enum, Eq, Ord,Read, Show)
+  | White
+  | Ultra
+     deriving (Bounded,Enum, Eq, Ord,Read, Show)
 
 data GuessPrompt a where
   Say   :: String -> GuessPrompt ()

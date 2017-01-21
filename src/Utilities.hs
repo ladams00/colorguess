@@ -13,4 +13,4 @@ pickColor gen = Secret color
   where (color: _) = shuffle' colors (length colors) gen
 
 colors :: [Color]
-colors = [Red .. Violet]
+colors = [minBound .. maxBound]
